@@ -6,9 +6,9 @@ import './SignUp.css';
 
 const SignUp = () => {
     return (
-        <div id='sign-up'>
+        <div className='sign-up'>
             <div>
-                <h1>Welcome to<br />InventoryStation</h1>
+                <h1>Welcome to<br /><span>InventoryStation</span></h1>
                 <p>Sign In to continue to your account...</p>
             </div>
             <div className='input-form text-center'>
