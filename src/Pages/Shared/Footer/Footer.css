@@ -1,6 +1,9 @@
 /* font Lobster */
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
+/* font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 .footer {
     display: flex;
     justify-content: space-around;
@@ -19,6 +22,7 @@
 }
 
 .footer h5 {
+    font-family: 'Poppins', sans-serif;
     color: white;
     margin-bottom: 10px;
     padding: 5px;
@@ -26,11 +30,14 @@
 }
 
 .footer-location p {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
     margin: 0px;
     color: white;
 }
 
 .footer-links a {
+    font-family: 'Poppins', sans-serif;
     text-decoration: none;
     color: white;
     display: block;

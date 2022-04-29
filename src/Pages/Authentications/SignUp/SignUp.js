@@ -21,11 +21,11 @@ const SignUp = () => {
                     <div className='social-signup text-center'>
                         <p className='social-signup-title'>Sign Up with Social</p>
                         <button className='mx-auto btn'>
-                            <img width='40px' src={Google} alt="" />
+                            <img width='30px' src={Google} alt="" />
                             <h6>Continue with Google</h6>
                         </button>
                         <button className='mx-auto btn'>
-                            <img width='40px' src={GitHub} alt="" />
+                            <img width='30px' src={GitHub} alt="" />
                             <h6>Continue with GitHub</h6>
                         </button>
                     </div>
