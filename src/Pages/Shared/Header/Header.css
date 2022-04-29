@@ -29,12 +29,12 @@
     font-weight: bold;
 }
 
-.button-login {
+.button-navbar-login {
     padding: 7px 30px;
     margin: 5px;
 }
 
-.button-signup {
+.button-navbar-signup {
     padding: 7px 30px;
     margin: 5px;
 }

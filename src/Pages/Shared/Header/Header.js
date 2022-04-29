@@ -23,7 +23,7 @@ const Header = () => {
     }
 
     return (
-        <Navbar className='navigation' bg="light" expand="lg">
+        <Navbar className='navigation fixed-top' bg="light" expand="lg">
             <Container fluid>
                 <Navbar.Brand>
                     <Link to='/' className='navbar-title-link'>
@@ -46,10 +46,10 @@ const Header = () => {
                         </nav>
                     </Nav>
                     <Link to='/login'>
-                        <button className='button-login btn btn-outline-dark'>Login</button>
+                        <button className='button-navbar-login btn btn-outline-dark'>Login</button>
                     </Link>
                     <Link to='/sign-up'>
-                        <button className='button-signup btn btn-primary'>Sign Up</button>
+                        <button className='button-navbar-signup btn btn-primary'>Sign Up</button>
                     </Link>
                 </Navbar.Collapse>
             </Container>
