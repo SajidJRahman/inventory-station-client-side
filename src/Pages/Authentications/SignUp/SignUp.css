@@ -58,7 +58,7 @@ input {
 }
 
 .social-signup button {
-    width: 65%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

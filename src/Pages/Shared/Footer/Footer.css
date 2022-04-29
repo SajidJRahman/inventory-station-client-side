@@ -1,0 +1,55 @@
+/* font Lobster */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 70px 0px;
+    background-color: rgb(0, 12, 38);
+}
+
+.footer h1 {
+    color: goldenrod;
+    margin: 60px 0px;
+    padding: 5px 20px;
+    border: 2px solid;
+    border-radius: 50px;
+    font-family: 'Lobster', cursive;
+    font-size: 35px;
+}
+
+.footer h5 {
+    color: white;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 2px solid goldenrod;
+}
+
+.footer-location p {
+    margin: 0px;
+    color: white;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.footer-links a:hover {
+    color: goldenrod;
+    transition: color .15s ease-in-out;
+}
+
+.footer-social svg {
+    border-radius: 5px;
+    background-color: white;
+    margin: 5px;
+    height: 40px;
+    width: 40px;
+}
+
+.footer-social svg:hover {
+    background-color: goldenrod;
+    transition: background-color .15s ease-in-out;
+}
