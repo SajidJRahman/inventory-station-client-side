@@ -1,0 +1,144 @@
+/* font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* font Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+#login {
+    background-image: url('../../../images/background/bg-1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 100%;
+    margin-top: 88px;
+}
+
+.login {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0px;
+}
+
+.login h1,
+h2,
+button {
+    font-family: 'Roboto', sans-serif;
+}
+
+.login span {
+    color: rgb(0, 119, 255);
+}
+
+.login h6,
+p,
+input {
+    font-family: 'Poppins', sans-serif;
+}
+
+.input-login-form {
+    width: 500px;
+    background-color: rgba(255, 255, 255);
+    padding: 30px;
+    border: 1px solid lightgray;
+    border-radius: 13px;
+}
+
+.signup-link {
+    margin: 10px;
+}
+
+.signup-link a {
+    text-decoration: none;
+}
+
+.social-login-title {
+    font-weight: bold;
+}
+
+.social-login button {
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 50px;
+    margin: 15px;
+    padding: 10px 0px;
+}
+
+.social-login button:hover {
+    box-shadow: 0px 0px 0px rgba(44, 135, 255, 0.673) inset, 0px 0px 1px 3px rgba(38, 139, 255, 0.427);
+    border-color: rgba(38, 139, 255, 0.427);
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.social-login h6 {
+    font-weight: 600;
+    padding-left: 10px;
+    margin: 0;
+}
+
+.or-login-method {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.or-login-method div {
+    height: 1px;
+    width: 100%;
+    background-color: gray;
+}
+
+.login-form-title {
+    font-weight: bold;
+}
+
+.input-login-form input {
+    font-size: 15px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.input-login-form input:focus {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 3px solid rgba(38, 139, 255, 0.637);
+    outline: 0;
+    transition: color .15s ease-in-out, border-bottom .15s ease-in-out;
+}
+
+.forget-password {
+    cursor: pointer;
+    color: rgb(0, 119, 255);
+    text-decoration: none;
+    margin: 0px;
+}
+
+.forget-password:hover {
+    color: rgb(0, 26, 255);
+}
+
+.button-login {
+    width: 100%;
+    height: 50px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: white;
+    background-color: rgb(38, 139, 255);
+}
+
+.button-login:hover {
+    color: white;
+    background-color: rgb(0, 119, 255);
+    transition: background-color .15s ease-in-out;
+}
