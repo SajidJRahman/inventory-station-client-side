@@ -6,6 +6,7 @@ import Footer from './Pages/Shared/Footer/Footer';
 import Login from './Pages/Authentications/Login/Login';
 import SignUp from './Pages/Authentications/SignUp/SignUp';
 import NotFound from './Pages/NotFound/NotFound';
+import Blogs from './Pages/Blogs/Blogs';
 
 const App = () => {
   return (
@@ -13,6 +14,8 @@ const App = () => {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/blogs' element={<Blogs />} />
         <Route path='/login' element={<Login />} />
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='*' element={<NotFound />} />
