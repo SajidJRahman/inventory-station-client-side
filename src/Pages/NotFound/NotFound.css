@@ -37,10 +37,10 @@
     font-family: 'Poppins', sans-serif;
     padding: 10px 35px;
     color: white;
-    background-color: rgb(38, 139, 255);
+    border: 1px solid rgba(216, 230, 255, 0.704);
 }
+
 
 .not-found button:hover {
     color: white;
-    background-color: rgb(0, 119, 255)
 }

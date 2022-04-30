@@ -1,0 +1,36 @@
+/* font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.carousel-caption {
+    margin-bottom: 10px;
+}
+
+.banner h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.banner p {
+    font-family: 'Poppins', sans-serif;
+}
+
+.banner button {
+    font-family: 'Poppins', sans-serif;
+}
+
+.button-light a {
+    color: white;
+    text-decoration: none;
+}
+
+.button-light:hover a {
+    color: black;
+}
+
+.button-dark a {
+    text-decoration: none;
+    color: white;
+}
+
+.button-dark:hover a {
+    color: white;
+}
