@@ -6,7 +6,9 @@ const Footer = () => {
     return (
         <div className='footer'>
             <div>
-                <h1>InventoryStation</h1>
+                <Link to='/'>
+                    <h1>InventoryStation</h1>
+                </Link>
             </div>
             <div className='footer-location text-center'>
                 <h5>Location</h5>

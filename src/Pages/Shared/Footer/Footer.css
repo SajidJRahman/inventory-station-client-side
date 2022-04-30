@@ -12,7 +12,7 @@
 }
 
 .footer h1 {
-    color: goldenrod;
+    color: rgb(38, 139, 255);
     margin: 60px 0px;
     padding: 5px 20px;
     border: 2px solid;
@@ -21,12 +21,16 @@
     font-size: 35px;
 }
 
+.footer a {
+    text-decoration: none;
+}
+
 .footer h5 {
     font-family: 'Poppins', sans-serif;
     color: white;
     margin-bottom: 10px;
     padding: 5px;
-    border-bottom: 2px solid goldenrod;
+    border-bottom: 2px solid rgb(38, 139, 255);
 }
 
 .footer-location p {
@@ -44,7 +48,7 @@
 }
 
 .footer-links a:hover {
-    color: goldenrod;
+    color: rgb(38, 139, 255);
     transition: color .15s ease-in-out;
 }
 
@@ -57,6 +61,6 @@
 }
 
 .footer-social svg:hover {
-    background-color: goldenrod;
+    background-color: rgb(38, 139, 255);
     transition: background-color .15s ease-in-out;
 }

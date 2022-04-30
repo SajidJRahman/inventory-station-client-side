@@ -10,11 +10,11 @@
 
 .navbar-title-link {
     text-decoration: none;
-    color: goldenrod;
+    color: white;
 }
 
 .navbar-title-link:hover {
-    color: goldenrod;
+    color: white;
 }
 
 .navbar-title-link h1 {
@@ -34,7 +34,7 @@
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
     margin: 10px;
-    color: black;
+    color: white;
     font-weight: bold;
     padding-bottom: 3px;
 }
@@ -42,7 +42,6 @@
 .nav-links a:hover {
     border-bottom: 3px solid;
     border-color: rgb(38, 139, 255);
-    transition: border-color .15s ease-in-out, border-bottom .15s ease-in-out;
 }
 
 .button-navbar-login {
