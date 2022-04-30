@@ -1,0 +1,29 @@
+.products-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.products-logo img {
+    margin: 30px;
+}
+
+.apple img {
+    width: 80px;
+}
+
+.asus img {
+    width: 180px;
+}
+
+.acer img {
+    width: 180px;
+}
+
+.samsung img {
+    width: 220px;
+}
+
+.hp img {
+    width: 90px;
+}
