@@ -1,6 +1,7 @@
 import React from 'react';
+import './Inventory.css';
 
-const RequireAuth = () => {
+const Inventory = () => {
     return (
         <div>
 
@@ -8,4 +9,4 @@ const RequireAuth = () => {
     );
 };
 
-export default RequireAuth;
+export default Inventory;

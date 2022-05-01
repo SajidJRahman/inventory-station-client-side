@@ -1,10 +1,96 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Google from '../../../images/logo/Google.svg';
 import GitHub from '../../../images/logo/GitHub.svg';
 import './SignUp.css';
+import Loader from '../../Shared/Loader/Loader';
+import auth from '../../../firebase.init';
+import { useCreateUserWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 
 const SignUp = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || '/';
+
+    const [
+        signInWithGoogle,
+        userGoogle,
+        loadingGoogle,
+        errorGoogle
+    ] = useSignInWithGoogle(auth);
+
+    const [
+        signInWithGithub,
+        userGitHub,
+        loadingGitHub,
+        errorGitHub
+    ] = useSignInWithGithub(auth);
+
+    const [
+        createUserWithEmailAndPassword,
+        userEmailPassword,
+        loadingEmailPassword,
+        errorEmailPassword,
+    ] = useCreateUserWithEmailAndPassword(auth);
+
+    const [
+        updateProfile,
+        updating,
+        errorUpdate
+    ] = useUpdateProfile(auth);
+
+    if (loadingGoogle || loadingGitHub || loadingEmailPassword || updating) {
+        return <Loader />;
+    }
+
+    if (errorGoogle || errorGitHub || errorEmailPassword || errorUpdate) {
+        alert(errorGoogle || errorGitHub, errorEmailPassword || errorUpdate.message);
+    }
+
+    if (userGoogle || userGitHub || userEmailPassword) {
+        updateProfile({ displayName: name });
+        navigate(from, { replace: true });
+    }
+
+    const handleName = event => {
+        setName(event.target.value);
+    }
+
+    const handleEmail = event => {
+        setEmail(event.target.value);
+    }
+
+    const handlePassword = event => {
+        setPassword(event.target.value);
+    }
+
+    const validateEmail = email => {
+        const testEmail = /\S+@\S+\.\S+/;
+        return testEmail.test(email);
+    }
+
+    const handleSignIn = event => {
+        event.preventDefault();
+
+        if (!validateEmail(email) || email === '') {
+            alert('Please enter a valid email address!');
+            return;
+        }
+
+        if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
+            alert('Please use at least one special character!');
+            return;
+        }
+
+        if (email && password) {
+            createUserWithEmailAndPassword(email, password);
+        }
+    }
+
     return (
         <div id='sign-up'>
             <div className='sign-up'>
@@ -20,11 +106,11 @@ const SignUp = () => {
                     </p>
                     <div className='social-signup text-center'>
                         <p className='social-signup-title'>Sign Up with Social</p>
-                        <button className='mx-auto btn'>
+                        <button onClick={() => signInWithGoogle()} className='mx-auto btn'>
                             <img width='30px' src={Google} alt="" />
                             <h6>Continue with Google</h6>
                         </button>
-                        <button className='mx-auto btn'>
+                        <button onClick={() => signInWithGithub()} className='mx-auto btn'>
                             <img width='30px' src={GitHub} alt="" />
                             <h6>Continue with GitHub</h6>
                         </button>
@@ -36,10 +122,10 @@ const SignUp = () => {
                     </div>
                     <form>
                         <p className='signup-form-title'>Sign Up with Email & Password</p>
-                        <input type="text" name="name" id="" placeholder='Name' />
-                        <input type="email" name="email" id="" required placeholder='Email' />
-                        <input type="password" name="password" id="" required placeholder='Password' />
-                        <button className='button-signup btn'>Sign Up</button>
+                        <input onBlur={handleName} type="text" name="name" id="" placeholder='Name' />
+                        <input onBlur={handleEmail} type="email" name="email" id="" required placeholder='Email' />
+                        <input onBlur={handlePassword} type="password" name="password" id="" required placeholder='Password' />
+                        <button onClick={handleSignIn} className='button-signup btn'>Sign Up</button>
                     </form>
                 </div>
             </div>

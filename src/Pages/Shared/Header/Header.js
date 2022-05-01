@@ -1,9 +1,21 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import auth from '../../../firebase.init';
 import './Header.css';
 
 const Header = () => {
+    const [user] = useAuthState(auth);
+
+    const handleSignOut = () => {
+        signOut(auth)
+            .then(() => {
+
+            })
+    }
+
     const CustomLink = ({ children, to, ...props }) => {
         let resolved = useResolvedPath(to);
         let match = useMatch({ path: resolved.pathname, end: true });
@@ -45,12 +57,28 @@ const Header = () => {
                             <CustomLink to='/my-items'>My Items</CustomLink>
                         </nav>
                     </Nav>
-                    <Link to='/login'>
-                        <button className='button-navbar-login btn btn-outline-light'>Login</button>
-                    </Link>
-                    <Link to='/sign-up'>
-                        <button className='button-navbar-signup btn btn-primary'>Sign Up</button>
-                    </Link>
+                    {
+                        user &&
+                        <div>
+                            <img className='mx-3 rounded-pill bg-light' width='45px' src={user?.photoURL} alt="" />
+                            <p className='my-0 me-3 fw-bold'>{user?.displayName}</p>
+                        </div>
+                    }
+                    {
+                        user ?
+                            <div>
+                                <button onClick={handleSignOut} className='btn btn-outline-light px-4'>Log Out</button>
+                            </div>
+                            :
+                            <div>
+                                <Link to='/login'>
+                                    <button className='button-navbar-login btn btn-outline-light'>Login</button>
+                                </Link>
+                                <Link to='/sign-up'>
+                                    <button className='button-navbar-signup btn btn-primary'>Sign Up</button>
+                                </Link>
+                            </div>
+                    }
                 </Navbar.Collapse>
             </Container>
         </Navbar>
