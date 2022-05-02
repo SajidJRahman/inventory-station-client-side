@@ -5,7 +5,8 @@ import GitHub from '../../../images/logo/GitHub.svg';
 import './SignUp.css';
 import Loader from '../../Shared/Loader/Loader';
 import auth from '../../../firebase.init';
-import { useCreateUserWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGithub, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { async } from '@firebase/util';
 
 const SignUp = () => {
     const [name, setName] = useState('');
@@ -35,7 +36,7 @@ const SignUp = () => {
         userEmailPassword,
         loadingEmailPassword,
         errorEmailPassword,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const [
         updateProfile,
@@ -43,12 +44,18 @@ const SignUp = () => {
         errorUpdate
     ] = useUpdateProfile(auth);
 
-    if (loadingGoogle || loadingGitHub || loadingEmailPassword || updating) {
+    const [
+        sendEmailVerification,
+        sendingVerification,
+        errorVerification
+    ] = useSendEmailVerification(auth);
+
+    if (loadingGoogle || loadingGitHub || loadingEmailPassword || updating || sendingVerification) {
         return <Loader />;
     }
 
-    if (errorGoogle || errorGitHub || errorEmailPassword || errorUpdate) {
-        alert(errorGoogle || errorGitHub, errorEmailPassword || errorUpdate.message);
+    if (errorGoogle || errorGitHub || errorEmailPassword || errorUpdate || errorVerification) {
+        alert(errorGoogle || errorGitHub, errorEmailPassword || errorUpdate || errorVerification.message);
     }
 
     if (userGoogle || userGitHub || userEmailPassword) {
