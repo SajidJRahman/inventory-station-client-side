@@ -1,14 +1,14 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
 import ChooseUs from '../ChooseUs/ChooseUs';
-import ProductsLogo from '../ProductsLogo/ProductsLogo';
+import Products from '../Products/Products/Products';
 import './Home.css';
 
 const Home = () => {
     return (
         <div className='home'>
             <Banner />
-            <ProductsLogo />
+            <Products />
             <ChooseUs />
             <div id='products'>
 

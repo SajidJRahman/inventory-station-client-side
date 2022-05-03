@@ -54,7 +54,14 @@ const Header = () => {
                             <CustomLink to='/inventory'>Inventory</CustomLink>
                             <CustomLink to='/manage-inventory'>Manage Inventory</CustomLink>
                             <CustomLink to='/blogs'>Blogs</CustomLink>
-                            <CustomLink to='/my-items'>My Items</CustomLink>
+                            {
+                                user &&
+                                <>
+                                    <CustomLink to='/my-items'>My Items</CustomLink>
+                                    <CustomLink to='/add-items'>Add Items</CustomLink>
+                                    <CustomLink to='/manage-items'>Manage Items</CustomLink>
+                                </>
+                            }
                         </nav>
                     </Nav>
                 </Navbar.Collapse>
@@ -73,7 +80,7 @@ const Header = () => {
                 {
                     user ?
                         <div>
-                            <button onClick={handleSignOut} className='btn btn-outline-light px-4'>Log Out</button>
+                            <button onClick={handleSignOut} className='btn btn-outline-light px-4 fw-bold'>Log Out</button>
                         </div>
                         :
                         <div>
