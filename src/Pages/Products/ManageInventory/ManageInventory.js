@@ -17,7 +17,8 @@ const ManageInventory = () => {
                             <div className='manage-inventory-details'>
                                 <h2>{product.name}</h2>
                                 <p>Available In Stock <b>{product.quantity}</b> Laptops</p>
-                                <p>Supplier: {product.supplier}</p>
+                                <p><small>{product.description}</small></p>
+                                <p>Supplier: <b>{product.supplier}</b></p>
                                 <h5>Price: <b>€{product.price}</b>/laptop</h5>
                                 <button className='delete-button btn btn-dark rounded-pill
                                 '>Delete This Item</button>
