@@ -1,0 +1,87 @@
+/* font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.manage-inventory-container {
+    margin-top: 110px;
+    margin-bottom: 65px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.manage-inventory {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.manage-inventory-items {
+    border: 2px solid rgba(197, 221, 255, 0.858);
+    background-image: linear-gradient(to bottom, rgb(197, 221, 255), rgb(255, 255, 255));
+    border-radius: 20px;
+    margin: 15px;
+    height: 95%;
+    border-radius: 19px;
+    position: relative;
+    transition: transform 0.4s;
+}
+
+.manage-inventory-items:hover {
+    transform: scale(1.05);
+    transition: transform 0.4s;
+}
+
+.manage-inventory-items div {
+    border-radius: 20px;
+}
+
+.manage-inventory-items img {
+    width: 100%;
+    border-radius: 19px;
+    padding: 5px;
+}
+
+.manage-inventory-items h2 {
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.manage-inventory-items h5 {
+    margin-bottom: 50px;
+}
+
+.manage-inventory-items p {
+    margin: 5px;
+}
+
+.manage-inventory-details {
+    padding: 10px;
+    margin: 8px;
+}
+
+.delete-button {
+    width: 90%;
+    padding: 8px;
+    position: absolute;
+    bottom: 18px;
+    left: 20px;
+}
+
+.delete-button:hover {
+    background-color: red;
+    border: 1px solid red;
+}
+
+.button-add-item {
+    background-color: rgb(52, 212, 159);
+    color: white;
+    padding-right: 6px;
+    margin-top: 50px;
+}
+
+.button-add-item svg {
+    width: 27px;
+    margin-left: 5px;
+}
+
+.button-add-item:hover {
+    background-color: rgb(0, 204, 136);
+    color: white;
+}
