@@ -10,6 +10,7 @@ const AddItems = () => {
                 <div className='add-items-details'>
                     <input type="text" name="name" id="" placeholder='Product Name' />
                     <input type="text" name="quantity" id="" placeholder='Quantity' />
+                    <textarea className='description-textarea' name="description" id="" cols="38" rows="1" placeholder='Description'></textarea>
                     <input type="text" name="supplier" id="" placeholder='Supplier' />
                     <input type="number" name="" id="" placeholder='Price' />
                     <input type="email" name="email" id="" placeholder='Your Email' />
