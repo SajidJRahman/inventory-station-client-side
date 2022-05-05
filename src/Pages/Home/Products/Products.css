@@ -1,3 +1,10 @@
+/* font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.products {
+    font-family: 'Poppins', sans-serif;
+}
+
 .product {
     display: flex;
     align-items: center;
@@ -26,4 +33,20 @@
     width: 24px;
     margin-left: 7px;
     margin-right: 0px;
+}
+
+.manage-button {
+    background-color: rgb(38, 139, 255);
+    color: white;
+    padding-right: 6px;
+}
+
+.manage-button svg {
+    width: 27px;
+    margin-left: 5px;
+}
+
+.manage-button:hover {
+    background-color: rgb(16, 111, 255);
+    color: white;
 }
