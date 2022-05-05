@@ -6,6 +6,27 @@ import { Link } from 'react-router-dom';
 const ManageInventory = () => {
     const [products, setProducts] = useProducts();
 
+    const deleteProduct = _id => {
+        const confirmDelete = window.confirm('This cannot be undone, are you sure you want to delete?');
+
+        if (confirmDelete === true) {
+            const url = `http://localhost:5000/products/${_id}`;
+            fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify()
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const productsLeft = products.filter(product => product._id !== _id);
+                    setProducts(productsLeft);
+                    alert('The item has been deleted successfully!');
+                });
+        }
+    }
+
     return (
         <div className='manage-inventory-container text-center container'>
             <h2 className='py-3'>Manage Inventory</h2>
@@ -20,7 +41,7 @@ const ManageInventory = () => {
                                 <p><small>{product.description}</small></p>
                                 <p>Supplier: <b>{product.supplier}</b></p>
                                 <h5>Price: <b>€{product.price}</b>/laptop</h5>
-                                <button className='delete-button btn btn-dark rounded-pill
+                                <button onClick={() => deleteProduct(product._id)} className='delete-button btn btn-dark rounded-pill
                                 '>Delete This Item</button>
                             </div>
                         </div>
