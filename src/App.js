@@ -11,14 +11,10 @@ import MyItems from './Pages/Products/MyItems/MyItems';
 import Inventory from './Pages/Products/Inventory/Inventory';
 import ManageInventory from './Pages/Products/ManageInventory/ManageInventory';
 import RequireAuth from './Pages/Authentications/RequireAuth/RequireAuth';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from './firebase.init';
 import AddItems from './Pages/Products/AddItems/AddItems';
 import ManageItems from './Pages/Products/ManageItems/ManageItems';
 
 const App = () => {
-  const [user] = useAuthState(auth);
-
   return (
     <div>
       <Header />
@@ -36,14 +32,21 @@ const App = () => {
           </RequireAuth>
         } />
         <Route path='/blogs' element={<Blogs />} />
-        {
-          user &&
-          <>
-            <Route path='/my-items' element={<MyItems />} />
-            <Route path='/add-items' element={<AddItems />} />
-            <Route path='/manage-items' element={<ManageItems />} />
-          </>
-        }
+        <Route path='/my-items' element={
+          <RequireAuth>
+            <MyItems />
+          </RequireAuth>
+        } />
+        <Route path='/add-items' element={
+          <RequireAuth>
+            <AddItems />
+          </RequireAuth>
+        } />
+        <Route path='/manage-items' element={
+          <RequireAuth>
+            <ManageItems />
+          </RequireAuth>
+        } />
         <Route path='/login' element={<Login />} />
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='*' element={<NotFound />} />
