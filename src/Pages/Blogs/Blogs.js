@@ -7,7 +7,7 @@ import MongoDB from '../../images/blogs/MongoDB.svg';
 const Blogs = () => {
     return (
         <div className='blogs-container text-center'>
-            <h1>Blogs</h1>
+            <h2>Blogs</h2>
             <div className='blogs px-auto'>
                 <div className='blog'>
                     <div className='blogs-icons'>

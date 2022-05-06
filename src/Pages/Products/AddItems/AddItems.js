@@ -26,7 +26,7 @@ const AddItems = () => {
                 <textarea name="image" {...register('image', { required: true })} id="" cols="47" placeholder='Paste An Image Link Here'>https://asset.mediaw.it/wcsstore/MMCatalogAssetStore/asset/images/14/63/146307.jpg</textarea>
                 <div className='add-items-details'>
                     <input type="text" name="name" {...register('name', { required: true })} id="" placeholder='Product Name' />
-                    <input type="number" name="quantity" {...register('quantity')} id="" placeholder='Quantity' />
+                    <input type="number" name="quantity" {...register('quantity', { required: true })} id="" placeholder='Quantity' />
                     <textarea className='description-textarea' name="description" {...register('description', { required: true })} id="" cols="46" rows="2" placeholder='Description'>Apple M1-CPU 8-core, SSD processor: 256GB, RAM: 8GB, Display: 13.3'</textarea>
                     <input type="text" name="supplier" {...register('supplier', { required: true })} id="" placeholder='Supplier' />
                     <input type="number" name="price" {...register('price', { required: true })} id="" placeholder='Price' />

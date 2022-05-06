@@ -1,0 +1,69 @@
+/* font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.inventory-conatainer {
+    margin-top: 88px;
+    margin-bottom: 45px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.inventory {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 500px;
+    box-shadow: 0 0 0, 0 0 10px rgba(135, 206, 250, 0.69);
+    border-radius: 20px;
+    padding: 0px;
+    margin-bottom: 40px;
+}
+
+.inventory img {
+    width: 496px;
+    border-radius: 20px;
+}
+
+.inventory-details {
+    width: 100%;
+    padding: 30px;
+    margin: 30px;
+    background-color: rgba(135, 206, 250, 0.69);
+    border-radius: 20px;
+}
+
+.inventory-details input {
+    border: 1px solid rgba(157, 198, 255, 0.858);
+    border-radius: 50px;
+    padding: 10px;
+    padding-left: 17px;
+    font-size: 15px;
+}
+
+.inventory-details button {
+    padding-right: 6px;
+    padding-left: 16px;
+}
+
+.inventory-details button svg {
+    width: 24px;
+    margin-left: 7px;
+    margin-right: 0px;
+}
+
+.manage-inventory-button {
+    background-color: rgb(38, 139, 255);
+    color: white;
+    padding-right: 6px;
+    padding-left: 16px;
+    margin-top: 10px;
+}
+
+.manage-inventory-button svg {
+    width: 27px;
+    margin-left: 5px;
+}
+
+.manage-inventory-button:hover {
+    background-color: rgb(16, 111, 255);
+    color: white;
+}

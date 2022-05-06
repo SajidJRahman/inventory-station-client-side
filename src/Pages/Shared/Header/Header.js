@@ -51,15 +51,14 @@ const Header = () => {
                     >
                         <nav className='nav-links'>
                             <CustomLink to='/home'>Home</CustomLink>
-                            <CustomLink to='/inventory'>Inventory</CustomLink>
                             <CustomLink to='/manage-inventory'>Manage Inventory</CustomLink>
                             <CustomLink to='/blogs'>Blogs</CustomLink>
                             {
                                 user &&
                                 <>
-                                    <CustomLink to='/my-items'>My Items</CustomLink>
-                                    <CustomLink to='/add-items'>Add Items</CustomLink>
                                     <CustomLink to='/manage-items'>Manage Items</CustomLink>
+                                    <CustomLink to='/add-items'>Add Items</CustomLink>
+                                    <CustomLink to='/my-items'>My Items</CustomLink>
                                 </>
                             }
                         </nav>

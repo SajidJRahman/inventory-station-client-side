@@ -1,10 +1,69 @@
 import React from 'react';
+import { Link, useParams } from 'react-router-dom';
 import './Inventory.css';
+import { useForm } from "react-hook-form";
+import useUpdateProducts from '../../../hooks/useUpdateProducts';
 
 const Inventory = () => {
-    return (
-        <div>
+    const { id } = useParams();
+    const [productsInfo, setProductsInfo] = useUpdateProducts({});
+    const { register, handleSubmit, watch, errors } = useForm();
 
+    const {
+        _id,
+        image,
+        name,
+        description,
+        price,
+        supplier,
+        quantity
+    } = productsInfo
+
+    const onSubmit = data => {
+        fetch(`http://localhost:5000/products/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => response.json())
+            .then(result => {
+                alert('updated product quantity.');
+            });
+    }
+
+    return (
+        <div className='inventory-conatainer'>
+            <h2 className='py-5 m-0 text-center'>Update quantity for {name}</h2>
+            <div className='inventory container'>
+                <img className='img-fluid' title={name} src={image} alt="" />
+                <div className='inventory-details'>
+                    <h2>{name}</h2>
+                    <p>Product ID: <b>{_id}</b></p>
+                    <p>{description}</p>
+                    <p>Available in stock: <b>{quantity}</b> laptops</p>
+                    <h4>Price: <b>€{price}</b>/laptop</h4>
+                    <p>Supplier: <b>{supplier}</b></p>
+                    <input {...register('quantity')} type="number" name="quantity" id="" placeholder='Quantity' />
+                    <button onClick={handleSubmit(onSubmit)} className='btn btn-dark rounded-pill py-2'>
+                        Restock Item
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div className='text-center'>
+                <Link to='/manage-inventory'>
+                    <button className='manage-inventory-button btn rounded-pill'>
+                        Manage Inventory
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clipRule="evenodd" />
+                        </svg>
+                    </button>
+                </Link>
+            </div>
         </div>
     );
 };
