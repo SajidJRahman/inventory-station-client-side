@@ -7,7 +7,7 @@ import useUpdateProducts from '../../../hooks/useUpdateProducts';
 const Inventory = () => {
     const { id } = useParams();
     const [productsInfo, setProductsInfo] = useUpdateProducts({});
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, reset, watch, errors } = useForm();
 
     const {
         _id,
@@ -30,6 +30,7 @@ const Inventory = () => {
             .then(response => response.json())
             .then(result => {
                 alert('updated product quantity.');
+                reset();
             });
     }
 

@@ -51,6 +51,11 @@
     color: white;
 }
 
+/* 
+=======================
+MEDIA QUERY STARTS HERE
+=======================
+*/
 @media only screen and (min-width: 350px) and (max-width: 850px) {
     .products {
         width: 95%;
@@ -96,7 +101,7 @@
     }
 }
 
-@media only screen and (min-width: 850px) and (max-width: 992px) {
+@media only screen and (min-width: 851px) and (max-width: 992px) {
     .product {
         flex-direction: row;
         height: 100%;

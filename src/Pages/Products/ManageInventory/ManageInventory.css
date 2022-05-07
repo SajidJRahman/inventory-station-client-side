@@ -86,6 +86,11 @@
     color: white;
 }
 
+/* 
+=======================
+MEDIA QUERY STARTS HERE
+=======================
+*/
 @media only screen and (min-width: 350px) and (max-width: 576px) {
     .manage-inventory {
         grid-template-columns: repeat(1, 1fr);

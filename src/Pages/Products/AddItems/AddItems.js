@@ -3,7 +3,7 @@ import './AddItems.css';
 import { useForm } from "react-hook-form";
 
 const AddItems = () => {
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, reset, watch, errors } = useForm();
 
     const onSubmit = data => {
         fetch('http://localhost:5000/products', {
@@ -15,7 +15,8 @@ const AddItems = () => {
         })
             .then(response => response.json())
             .then(data => {
-                alert('item has been added!')
+                alert('item has been added!');
+                reset();
             })
     }
 

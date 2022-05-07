@@ -10,9 +10,6 @@ const Home = () => {
             <Banner />
             <Products />
             <ChooseUs />
-            <div id='products'>
-
-            </div>
         </div>
     );
 };

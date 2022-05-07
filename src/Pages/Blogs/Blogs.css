@@ -73,6 +73,11 @@ h5 {
     padding: 10px 30px 30px 30px;
 }
 
+/*
+=======================
+MEDIA QUERY STARTS HERE
+=======================
+*/
 @media only screen and (min-width: 350px) and (max-width: 762px) {
     .blogs-container {
         margin-bottom: 0px;
@@ -87,7 +92,6 @@ h5 {
     }
 
     .blogs-icons {
-        /* border-radius: 15px; */
         padding: 20px;
     }
 
