@@ -9,7 +9,7 @@ import './Header.css';
 const Header = () => {
     const [user] = useAuthState(auth);
 
-    const handleSignOut = () => {
+    const handleLogOut = () => {
         signOut(auth)
             .then(() => {
 
@@ -56,41 +56,38 @@ const Header = () => {
                             {
                                 user &&
                                 <>
-                                    <CustomLink to='/manage-items'>Manage Items</CustomLink>
                                     <CustomLink to='/add-items'>Add Items</CustomLink>
                                     <CustomLink to='/my-items'>My Items</CustomLink>
                                 </>
                             }
                         </nav>
                     </Nav>
+                    {
+                        user &&
+                        <div className='navbar-image'>
+                            <img className='mx-3 rounded-pill bg-light' width='45px' src={user?.photoURL} alt="" />
+                        </div>
+                    }
+                    {
+                        user &&
+                        <p className='navbar-name my-0 me-4 fw-bold text-light'>{user?.displayName}</p>
+                    }
+                    {
+                        user ?
+                            <div className='navbar-logout'>
+                                <button onClick={handleLogOut} className='btn btn-outline-light px-4 fw-bold'>Log Out</button>
+                            </div>
+                            :
+                            <div className='navbar-button-group'>
+                                <Link to='/login'>
+                                    <button className='button-navbar-login btn btn-outline-light'>Login</button>
+                                </Link>
+                                <Link to='/sign-up'>
+                                    <button className='button-navbar-signup btn btn-primary'>Sign Up</button>
+                                </Link>
+                            </div>
+                    }
                 </Navbar.Collapse>
-                {
-                    user &&
-                    <div>
-                        <img className='mx-3 rounded-pill bg-light' width='45px' src={user?.photoURL} alt="" />
-                    </div>
-                }
-                {
-                    user &&
-                    <div>
-                        <p className='my-0 me-4 fw-bold text-light'>{user?.displayName}</p>
-                    </div>
-                }
-                {
-                    user ?
-                        <div>
-                            <button onClick={handleSignOut} className='btn btn-outline-light px-4 fw-bold'>Log Out</button>
-                        </div>
-                        :
-                        <div>
-                            <Link to='/login'>
-                                <button className='button-navbar-login btn btn-outline-light'>Login</button>
-                            </Link>
-                            <Link to='/sign-up'>
-                                <button className='button-navbar-signup btn btn-primary'>Sign Up</button>
-                            </Link>
-                        </div>
-                }
             </Container>
         </Navbar>
     );

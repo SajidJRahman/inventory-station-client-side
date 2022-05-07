@@ -12,7 +12,6 @@ import Inventory from './Pages/Products/Inventory/Inventory';
 import ManageInventory from './Pages/Products/ManageInventory/ManageInventory';
 import RequireAuth from './Pages/Authentications/RequireAuth/RequireAuth';
 import AddItems from './Pages/Products/AddItems/AddItems';
-import ManageItems from './Pages/Products/ManageItems/ManageItems';
 
 const App = () => {
   return (
@@ -40,11 +39,6 @@ const App = () => {
         <Route path='/add-items' element={
           <RequireAuth>
             <AddItems />
-          </RequireAuth>
-        } />
-        <Route path='/manage-items' element={
-          <RequireAuth>
-            <ManageItems />
           </RequireAuth>
         } />
         <Route path='/login' element={<Login />} />

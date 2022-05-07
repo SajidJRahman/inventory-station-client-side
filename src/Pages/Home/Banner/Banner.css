@@ -34,3 +34,21 @@
 .button-dark:hover a {
     color: white;
 }
+
+@media only screen and (min-width: 350px) and (max-width: 540px) {
+    .carousel-caption {
+        margin-bottom: 5px;
+    }
+
+    .banner h3 {
+        font-size: 15px;
+    }
+
+    .banner p {
+        font-size: 12px;
+    }
+
+    .banner button {
+        font-size: 10px;
+    }
+}

@@ -72,3 +72,43 @@ h5 {
     margin: 0px;
     padding: 10px 30px 30px 30px;
 }
+
+@media only screen and (min-width: 350px) and (max-width: 762px) {
+    .blogs-container {
+        margin-bottom: 0px;
+    }
+
+    .blogs {
+        align-items: center;
+    }
+
+    .blog {
+        width: 92%;
+    }
+
+    .blogs-icons {
+        /* border-radius: 15px; */
+        padding: 20px;
+    }
+
+    .blogs-icons svg {
+        height: 100%;
+        width: 100%;
+    }
+
+    .javascript {
+        width: 30%;
+    }
+
+    .nodejs {
+        width: 30%;
+    }
+
+    .mongodb {
+        width: 50%;
+    }
+
+    .blogs-details {
+        width: 100%;
+    }
+}

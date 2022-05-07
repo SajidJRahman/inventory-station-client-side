@@ -62,3 +62,39 @@
     background-color: rgb(0, 102, 255);
     transition: background-color .10s ease-in-out;
 }
+
+@media only screen and (min-width: 300px) and (max-width: 991px) {
+    .navbar-toggler {
+        background-color: rgba(255, 255, 255, 0.807);
+    }
+
+    .navbar-image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-name {
+        text-align: center;
+        margin: 0px !important;
+    }
+
+    .nav-links {
+        display: block;
+        text-align: center;
+    }
+
+    .nav-links div {
+        margin: 5px;
+    }
+
+    .navbar-logout {
+        display: flex;
+        justify-content: center;
+        margin-top: 7px;
+    }
+
+    .navbar-button-group {
+        display: flex;
+        justify-content: center;
+    }
+}

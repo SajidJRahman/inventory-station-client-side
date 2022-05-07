@@ -64,3 +64,21 @@
     background-color: rgb(38, 139, 255);
     transition: background-color .15s ease-in-out;
 }
+
+@media only screen and (min-width: 350px) and (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        padding: 50px;
+    }
+
+    .footer h1 {
+        text-align: center;
+        margin: 60px 0px;
+        padding: 5px 20px;
+        font-size: 35px;
+    }
+
+    .footer h5 {
+        margin-top: 50px;
+    }
+}

@@ -78,8 +78,8 @@ const Banner = () => {
                 />
 
                 <Carousel.Caption>
-                    <h3>We Ship Anywhere. Everywhere</h3>
-                    <p>We can make your products reach anywhere with fast delivery option.</p>
+                    <h3>We offer you to create an account!</h3>
+                    <p>We offer you to create an account with email-passwpord, Google & GitHub.</p>
                     <button className='btn btn-outline-light button-light rounded-pill px-4'>
                         <a href="#products">View Products</a>
                     </button>
