@@ -86,7 +86,7 @@ const Login = () => {
         <div id='login'>
             <ToastContainer />
             <div className='login'>
-                <div>
+                <div className='welcome-login'>
                     <h1>Welcome back to<br /><span>InventoryStation</span></h1>
                     <p>Login to continue to your account...</p>
                 </div>

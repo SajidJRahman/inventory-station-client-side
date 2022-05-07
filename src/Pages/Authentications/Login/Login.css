@@ -149,3 +149,31 @@ input {
 MEDIA QUERY STARTS HERE
 =======================
 */
+@media only screen and (min-width: 350px) and (max-width: 576px) {
+    .login {
+        flex-direction: column;
+        padding: 25px 0px;
+    }
+
+    .input-login-form {
+        width: 90%;
+    }
+
+    .welcome-login {
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    .login {
+        flex-direction: column;
+    }
+
+    .input-login-form {
+        width: 70%;
+    }
+
+    .welcome-login {
+        text-align: center;
+    }
+}

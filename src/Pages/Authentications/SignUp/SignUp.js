@@ -101,11 +101,11 @@ const SignUp = () => {
     return (
         <div id='sign-up'>
             <div className='sign-up'>
-                <div>
-                    <h1>Welcome to<br /><span>InventoryStation</span></h1>
-                    <p>Sign Up to create your account...</p>
+                <div className='welcome-sign-up'>
+                    <h1 className='welcome-sign-up-header'>Welcome to<br /><span>InventoryStation</span></h1>
+                    <p className='welcome-sign-up-text'>Sign Up to create your account...</p>
                 </div>
-                <div className='input-form text-center'>
+                <div className='input-sign-up-form text-center'>
                     <h2>Sign Up</h2>
                     <p className='login-link'>
                         Already have an account?

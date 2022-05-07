@@ -37,7 +37,7 @@ input {
     font-family: 'Poppins', sans-serif;
 }
 
-.input-form {
+.input-sign-up-form {
     width: 500px;
     padding: 30px;
     background-color: rgba(255, 255, 255);
@@ -98,7 +98,7 @@ input {
     font-weight: bold;
 }
 
-.input-form input {
+.input-sign-up-form input {
     width: 100%;
     height: 50px;
     border: 1px solid lightgrey;
@@ -108,7 +108,7 @@ input {
     padding: 15px;
 }
 
-.input-form input:focus {
+.input-sign-up-form input:focus {
     border-top: none;
     border-right: none;
     border-left: none;
@@ -117,7 +117,7 @@ input {
     transition: color .15s ease-in-out, border-bottom .15s ease-in-out;
 }
 
-.input-form input::placeholder {
+.input-sign-up-form input::placeholder {
     color: black;
 }
 
@@ -142,3 +142,48 @@ input {
 MEDIA QUERY STARTS HERE
 =======================
 */
+@media only screen and (min-width: 350px) and (max-width: 576px) {
+    .sign-up {
+        flex-direction: column;
+        padding: 25px 0px;
+    }
+
+    .input-sign-up-form {
+        width: 90%;
+    }
+
+    .welcome-sign-up {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .welcome-sign-up-header {
+        color: white;
+    }
+
+    .welcome-sign-up-text {
+        color: white;
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    .sign-up {
+        flex-direction: column;
+    }
+
+    .input-sign-up-form {
+        width: 70%;
+    }
+
+    .welcome-sign-up {
+        text-align: center;
+    }
+
+    .welcome-sign-up-header {
+        color: white;
+    }
+
+    .welcome-sign-up-text {
+        color: white;
+    }
+}

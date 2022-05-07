@@ -47,12 +47,13 @@ const Inventory = () => {
                     <h4>Price: <b>€{price}</b>/laptop</h4>
                     <p>Supplier: <b>{supplier}</b></p>
                     <input {...register('quantity')} type="number" name="quantity" id="" placeholder='Quantity' />
-                    <button onClick={handleSubmit(onSubmit)} className='btn btn-dark rounded-pill py-2'>
+                    <button onClick={handleSubmit(onSubmit)} className='btn button-restock btn-dark rounded-pill py-2'>
                         Restock Item
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
                         </svg>
                     </button>
+                    <button className='button-delivered btn rounded-pill py-2'>Delivered</button>
                 </div>
             </div>
             <div className='text-center'>
