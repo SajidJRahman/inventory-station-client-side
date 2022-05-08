@@ -135,7 +135,9 @@ const SignUp = () => {
                         <p className='signup-form-title'>Sign Up with Email & Password</p>
                         <input onBlur={handleName} type="text" name="name" id="" placeholder='Name' />
                         <input onBlur={handleEmail} type="email" name="email" id="" required placeholder='Email' />
+                        <p className='error-message'>{emailSignUpError}</p>
                         <input onBlur={handlePassword} type="password" name="password" id="" required placeholder='Password' />
+                        <p className='error-message'>{passwordSignUpError}</p>
                         <button onClick={handleSignIn} className='button-signup btn'>Sign Up</button>
                     </form>
                 </div>

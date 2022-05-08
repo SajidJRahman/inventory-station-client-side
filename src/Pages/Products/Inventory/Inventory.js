@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import './Inventory.css';
 import { useForm } from "react-hook-form";
 import useUpdateProducts from '../../../hooks/useUpdateProducts';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Inventory = () => {
     const { id } = useParams();
@@ -29,7 +30,15 @@ const Inventory = () => {
         })
             .then(response => response.json())
             .then(result => {
-                alert('updated product quantity.');
+                toast.success('Updated product quantity!', {
+                    position: "top-center",
+                    autoClose: 2500,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
                 reset();
             });
     }
@@ -48,7 +57,15 @@ const Inventory = () => {
             })
                 .then(response => response.json())
                 .then(result => {
-                    alert('updated product quantity.');
+                    toast.success('Updated product quantity!', {
+                        position: "top-center",
+                        autoClose: 2500,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    });
                     reset();
                 });
         }
@@ -56,6 +73,7 @@ const Inventory = () => {
 
     return (
         <div className='inventory-conatainer'>
+            <ToastContainer />
             <h2 className='py-5 m-0 text-center'>Update quantity for {name}</h2>
             <div className='inventory container'>
                 <img className='img-fluid' title={name} src={image} alt="" />

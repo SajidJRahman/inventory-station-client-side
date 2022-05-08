@@ -1,12 +1,13 @@
 import React from 'react';
 import './AddItems.css';
 import { useForm } from "react-hook-form";
+import { toast, ToastContainer } from 'react-toastify';
 
 const AddItems = () => {
     const { register, handleSubmit, reset, watch, errors } = useForm();
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/products', {
+        fetch('http://localhost:5000/my-items', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -15,13 +16,22 @@ const AddItems = () => {
         })
             .then(response => response.json())
             .then(data => {
-                alert('item has been added!');
+                toast.success('Item added successfully!', {
+                    position: "top-center",
+                    autoClose: 2500,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
                 reset();
             })
     }
 
     return (
         <div className='add-items-container text-center'>
+            <ToastContainer />
             <h2 className='py-4'>Add New Items</h2>
             <form className='add-items mx-auto'>
                 <textarea name="image" {...register('image', { required: true })} id="" cols="47" placeholder='Paste An Image Link Here'>https://asset.mediaw.it/wcsstore/MMCatalogAssetStore/asset/images/14/63/146307.jpg</textarea>

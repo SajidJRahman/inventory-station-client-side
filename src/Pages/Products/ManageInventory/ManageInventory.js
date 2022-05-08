@@ -2,6 +2,7 @@ import React from 'react';
 import './ManageInventory.css';
 import useProducts from '../../../hooks/useProducts';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 const ManageInventory = () => {
     const [products, setProducts] = useProducts();
@@ -27,13 +28,22 @@ const ManageInventory = () => {
                 .then(data => {
                     const productsLeft = products.filter(product => product._id !== _id);
                     setProducts(productsLeft);
-                    alert('The item has been deleted successfully!');
+                    toast.success('Item has been deleted successfully!', {
+                        position: "top-center",
+                        autoClose: 2500,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    });
                 });
         }
     }
 
     return (
         <div className='manage-inventory-container text-center container'>
+            <ToastContainer />
             <h2 className='py-3'>Manage Inventory</h2>
             <div className='manage-inventory'>
                 {

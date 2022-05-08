@@ -1,0 +1,104 @@
+/* font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.my-items-container {
+    margin-top: 110px;
+    margin-bottom: 65px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.my-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.my-item {
+    border: 2px solid rgba(197, 221, 255, 0.858);
+    background-image: linear-gradient(to bottom, rgb(197, 221, 255), rgb(255, 255, 255));
+    border-radius: 20px;
+    margin: 15px;
+    height: 95%;
+    border-radius: 19px;
+    position: relative;
+    transition: transform 0.4s;
+}
+
+.my-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.4s;
+}
+
+.my-item div {
+    border-radius: 20px;
+}
+
+.my-item img {
+    width: 100%;
+    border-radius: 19px;
+    padding: 5px;
+}
+
+.my-item h2 {
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.my-item h5 {
+    margin-bottom: 110px;
+}
+
+.my-item p {
+    margin: 10px;
+}
+
+.my-items-details {
+    padding: 10px;
+    margin: 8px;
+}
+
+.update-button {
+    width: 90%;
+    padding: 8px;
+    position: absolute;
+    bottom: 68px;
+    left: 18px;
+    background-color: rgb(52, 212, 159);
+    border: 1px solid rgb(52, 212, 159);
+    ;
+}
+
+.update-button:hover {
+    background-color: rgb(0, 204, 136);
+    border: 1px solid rgb(0, 204, 136);
+    color: white;
+}
+
+.delete-button {
+    width: 90%;
+    padding: 8px;
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+}
+
+.delete-button:hover {
+    background-color: red;
+    border: 1px solid red;
+}
+
+/* 
+=======================
+MEDIA QUERY STARTS HERE
+=======================
+*/
+@media only screen and (min-width: 350px) and (max-width: 576px) {
+    .my-items {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    .my-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
