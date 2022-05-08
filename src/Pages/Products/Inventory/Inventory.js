@@ -34,6 +34,26 @@ const Inventory = () => {
             });
     }
 
+    const handleDelivered = () => {
+        const quantityDelivered = {
+            quantity: quantity - 1
+        };
+        if (quantity > 0) {
+            fetch(`http://localhost:5000/products/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(quantityDelivered)
+            })
+                .then(response => response.json())
+                .then(result => {
+                    alert('updated product quantity.');
+                    reset();
+                });
+        }
+    }
+
     return (
         <div className='inventory-conatainer'>
             <h2 className='py-5 m-0 text-center'>Update quantity for {name}</h2>
@@ -43,7 +63,12 @@ const Inventory = () => {
                     <h2>{name}</h2>
                     <p>Product ID: <b>{_id}</b></p>
                     <p>{description}</p>
-                    <p>Available in stock: <b>{quantity}</b> laptops</p>
+                    <div className='mb-2'>
+                        Available in stock:
+                        {
+                            quantity === 0 ? <b> Stock Out</b> : <><b> {quantity}</b> laptops</>
+                        }
+                    </div>
                     <h4>Price: <b>€{price}</b>/laptop</h4>
                     <p>Supplier: <b>{supplier}</b></p>
                     <input {...register('quantity')} type="number" name="quantity" id="" placeholder='Quantity' />
@@ -53,7 +78,7 @@ const Inventory = () => {
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
                         </svg>
                     </button>
-                    <button className='button-delivered btn rounded-pill py-2'>Delivered</button>
+                    <button onClick={handleDelivered} className='button-delivered btn rounded-pill py-2'>Delivered</button>
                 </div>
             </div>
             <div className='text-center'>

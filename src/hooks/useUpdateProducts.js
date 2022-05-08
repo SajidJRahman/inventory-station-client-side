@@ -9,9 +9,7 @@ const useUpdateProducts = () => {
         fetch(`http://localhost:5000/products/${id}`)
             .then(response => response.json())
             .then(data => setProductsInfo(data));
-    }, []);
-
-    // test again, because I am having issues pushing to GitHub
+    }, [productsInfo]);
 
     return [productsInfo, setProductsInfo];
 };
