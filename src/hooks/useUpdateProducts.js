@@ -11,7 +11,7 @@ const useUpdateProducts = () => {
             .then(data => setProductsInfo(data));
     }, []);
 
-    // test
+    // test again, because I am having issues pushing to GitHub
 
     return [productsInfo, setProductsInfo];
 };
