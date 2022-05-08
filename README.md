@@ -10,3 +10,4 @@
 * I made the login & sign up page with some idea from Adobe login page.
 * I used React Hook Form to implement adding new item & to update inventory product quantity.
 * I implemented Google, GitHub & Email-Password as login methods for this project.
+* I made some routes invisible which user won't see when they first visit, until user logs into their account.
