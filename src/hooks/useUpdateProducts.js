@@ -11,6 +11,8 @@ const useUpdateProducts = () => {
             .then(data => setProductsInfo(data));
     }, []);
 
+    // test
+
     return [productsInfo, setProductsInfo];
 };
 
