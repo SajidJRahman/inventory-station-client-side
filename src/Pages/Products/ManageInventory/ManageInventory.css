@@ -44,7 +44,7 @@
 }
 
 .manage-inventory-items h5 {
-    margin-bottom: 55px;
+    margin-bottom: 110px;
 }
 
 .manage-inventory-items p {
@@ -56,12 +56,29 @@
     margin: 8px;
 }
 
+.update-button {
+    width: 90%;
+    padding: 8px;
+    position: absolute;
+    bottom: 68px;
+    left: 18px;
+    background-color: rgb(52, 212, 159);
+    border: 1px solid rgb(52, 212, 159);
+    ;
+}
+
+.update-button:hover {
+    background-color: rgb(0, 204, 136);
+    border: 1px solid rgb(0, 204, 136);
+    color: white;
+}
+
 .delete-button {
     width: 90%;
     padding: 8px;
     position: absolute;
     bottom: 18px;
-    left: 20px;
+    left: 18px;
 }
 
 .delete-button:hover {

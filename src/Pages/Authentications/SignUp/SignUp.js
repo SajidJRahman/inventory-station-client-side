@@ -12,6 +12,8 @@ const SignUp = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [emailSignUpError, setEmailSignUpError] = useState('');
+    const [passwordSignUpError, setPasswordSignUpError] = useState('');
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -84,17 +86,19 @@ const SignUp = () => {
         event.preventDefault();
 
         if (!validateEmail(email) || email === '') {
-            alert('Please enter a valid email address!');
+            setEmailSignUpError('Please, enter a valid email address!');
             return;
         }
 
         if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
-            alert('Please use at least one special character!');
+            setPasswordSignUpError('Please, use at least one special character!');
             return;
         }
 
         if (email && password) {
             createUserWithEmailAndPassword(email, password);
+            setEmailSignUpError('');
+            setPasswordSignUpError('');
         }
     }
 

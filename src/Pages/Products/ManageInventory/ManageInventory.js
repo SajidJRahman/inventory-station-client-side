@@ -1,10 +1,15 @@
 import React from 'react';
 import './ManageInventory.css';
 import useProducts from '../../../hooks/useProducts';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ManageInventory = () => {
     const [products, setProducts] = useProducts();
+
+    const navigate = useNavigate();
+    const navigateToInventory = _id => {
+        navigate(`/inventory/${_id}`);
+    }
 
     const deleteProduct = _id => {
         const confirmDelete = window.confirm('This cannot be undone, are you sure you want to delete?');
@@ -37,10 +42,16 @@ const ManageInventory = () => {
                             <img title={product.name} src={product.image} alt="" />
                             <div className='manage-inventory-details'>
                                 <h2>{product.name}</h2>
-                                <p>Available In Stock <b>{product.quantity}</b> Laptops</p>
+                                <div>
+                                    Available in stock:
+                                    {
+                                        product.quantity === 0 ? <b> Stock Out</b> : <><b> {product.quantity}</b> laptops</>
+                                    }
+                                </div>
                                 <p><small>{product.description}</small></p>
                                 <p>Supplier: <b>{product.supplier}</b></p>
                                 <h5>Price: <b>€{product.price}</b>/laptop</h5>
+                                <button onClick={() => navigateToInventory(product._id)} className='update-button btn btn-dark rounded-pill'>Update This Product</button>
                                 <button onClick={() => deleteProduct(product._id)} className='delete-button btn btn-dark rounded-pill
                                 '>Delete This Item</button>
                             </div>

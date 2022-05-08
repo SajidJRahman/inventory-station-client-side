@@ -11,6 +11,9 @@ import { ToastContainer, toast } from 'react-toastify';
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [passwordError, setPasswordError] = useState('');
+    const [emptyError, setEmptyError] = useState('');
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -64,21 +67,42 @@ const Login = () => {
     }
 
     const handleLogin = () => {
+        if (!email) {
+            setEmailError('Please, enter an email address!');
+            if (!password) {
+                setPasswordError('Please enter your password!');
+                return;
+            }
+        }
+
         if (email && password) {
             signInWithEmailAndPassword(email, password);
+            setEmailError('');
+            setPasswordError('');
+            setEmptyError('');
+        }
+
+        else {
+            setEmptyError('Please, enter both your email & password!');
+            return;
         }
     }
 
     const handlePasswordReset = async () => {
+        if (!email) {
+            setEmailError('Please, enter an email to sent reset link!');
+            setPasswordError('');
+            return;
+        }
         if (email) {
             await sendPasswordResetEmail(email);
+            setEmailError('');
+            setPasswordError('');
+            setEmptyError('');
             toast.success('Password reset link sent!', {
                 position: "top-center",
                 autoClose: 3000,
             });
-        }
-        else {
-            alert('Please enter an email to reset your password!');
         }
     }
 
@@ -114,8 +138,11 @@ const Login = () => {
                     </div>
                     <form>
                         <p className='login-form-title'>Login with Email & Password</p>
+                        <p className='error-message'>{emptyError}</p>
                         <input onBlur={handleEmail} type="email" name="email" id="" required placeholder='Email' />
+                        <p className='error-message'>{emailError}</p>
                         <input onBlur={handlePassword} type="password" name="password" id="" required placeholder='Password' />
+                        <p className='error-message'>{passwordError}</p>
                         <p onClick={handlePasswordReset} className='forget-password'>Forget Password?</p>
                         <button onClick={handleLogin} className='button-login btn'>Login</button>
                     </form>
