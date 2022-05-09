@@ -8,8 +8,8 @@ import Title from '../../Shared/Title/Title';
 
 const Inventory = () => {
     const { id } = useParams();
-    const [productsInfo, setProductsInfo] = useUpdateProducts({});
-    const { register, handleSubmit, reset, watch, errors } = useForm();
+    const [productsInfo] = useUpdateProducts({});
+    const { register, handleSubmit, reset } = useForm();
 
     const {
         _id,

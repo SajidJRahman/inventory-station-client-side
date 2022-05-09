@@ -20,7 +20,7 @@ const Footer = () => {
             </div>
             <div className='footer-links text-center'>
                 <h5>Links</h5>
-                <Link to='/inventory'>Inventory</Link>
+                <Link to='/add-items'>Add Items</Link>
                 <Link to='/manage-inventory'>Manage Inventory</Link>
                 <Link to='/blogs'>Blogs</Link>
                 <Link to='/my-items'>My Items</Link>

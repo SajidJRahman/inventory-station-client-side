@@ -1,0 +1,69 @@
+/* font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.about-container {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 87px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.about-bg {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.about img {
+    width: 100%;
+}
+
+.about-text {
+    width: 35%;
+    background-color: rgb(155, 217, 255);
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 0, 0 0 10px #e2e2e2;
+}
+
+.about p {
+    margin: 0px;
+}
+
+/* 
+=======================
+MEDIA QUERY STARTS HERE
+=======================
+*/
+@media only screen and (min-width: 350px) and (max-width: 768px) {
+    .about-container {
+        margin-bottom: 20px;
+    }
+
+    .about-bg {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .about-text {
+        width: 90%;
+        margin-bottom: 10px;
+
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 850px) {
+    .about-bg {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-text {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 850px) and (max-width: 992px) {
+    .about-bg {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -12,6 +12,7 @@ import Inventory from './Pages/Products/Inventory/Inventory';
 import ManageInventory from './Pages/Products/ManageInventory/ManageInventory';
 import RequireAuth from './Pages/Authentications/RequireAuth/RequireAuth';
 import AddItems from './Pages/Products/AddItems/AddItems';
+import About from './Pages/About/About';
 
 const App = () => {
   return (
@@ -41,6 +42,7 @@ const App = () => {
             <AddItems />
           </RequireAuth>
         } />
+        <Route path='/about-us' element={<About />} />
         <Route path='/login' element={<Login />} />
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='*' element={<NotFound />} />

@@ -13,7 +13,7 @@ const ChooseUs = () => {
                         </svg>
                     </div>
                     <div className='choose-us-detail'>
-                        <p>We got the best collection on the market today! Best in product class, price & quality has always been our main target. You can choose as many items as you want from our decent amount of collection.</p>
+                        <p>We've got decent amount of features for you as an admin to store & keep updating your products. For instance, you can set stock with a few steps. For your usability, we've added update button everywhere!</p>
                     </div>
                 </div>
                 <div className='choose-us-section'>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const useUpdateProducts = () => {
@@ -9,7 +9,7 @@ const useUpdateProducts = () => {
         fetch(`https://inventory-station.herokuapp.com/products/${id}`)
             .then(response => response.json())
             .then(data => setProductsInfo(data));
-    }, [productsInfo]);
+    }, [productsInfo, id]);
 
     return [productsInfo, setProductsInfo];
 };

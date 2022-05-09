@@ -60,6 +60,7 @@ const Header = () => {
                                     <CustomLink to='/my-items'>My Items</CustomLink>
                                 </>
                             }
+                            <CustomLink to='/about-us'>About</CustomLink>
                         </nav>
                     </Nav>
                     {

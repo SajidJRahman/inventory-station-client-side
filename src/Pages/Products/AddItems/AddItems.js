@@ -8,8 +8,7 @@ import Title from '../../Shared/Title/Title';
 
 const AddItems = () => {
     const [user] = useAuthState(auth);
-
-    const { register, handleSubmit, reset, watch, errors } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
         fetch('https://inventory-station.herokuapp.com/my-items', {
@@ -47,7 +46,7 @@ const AddItems = () => {
                     <textarea className='description-textarea' name="description" {...register('description', { required: true })} id="" cols="46" rows="2" placeholder='Description'>Apple M1-CPU 8-core, SSD processor: 256GB, RAM: 8GB, Display: 13.3'</textarea>
                     <input type="text" name="supplier" {...register('supplier', { required: true })} id="" placeholder='Supplier' />
                     <input type="number" name="price" {...register('price', { required: true })} id="" placeholder='Price' />
-                    <input type="email" name="email" value={user.email} disabled {...register('email', { required: true })} id="" placeholder='Your Email' />
+                    <input type="email" name="email" value={user.email} {...register('email', { required: true })} id="" placeholder='Your Email' />
                     <button onClick={handleSubmit(onSubmit)} className='add-items-button btn rounded-pill
             '>Add This Item</button>
                 </div>

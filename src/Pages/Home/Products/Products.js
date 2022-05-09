@@ -4,7 +4,7 @@ import useProducts from '../../../hooks/useProducts';
 import './Products.css';
 
 const Products = () => {
-    const [products, setProducts] = useProducts();
+    const [products] = useProducts();
     const homeProducts = products.slice(0, 6);
 
     const navigate = useNavigate();
