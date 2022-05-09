@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import './Inventory.css';
 import { useForm } from "react-hook-form";
 import useUpdateProducts from '../../../hooks/useUpdateProducts';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import Title from '../../Shared/Title/Title';
 
 const Inventory = () => {
@@ -34,13 +34,15 @@ const Inventory = () => {
                 toast.success('Updated product quantity!', {
                     position: "top-center",
                     autoClose: 2500,
-                    hideProgressBar: false,
+                    hideProgressBar: true,
                     closeOnClick: true,
                     pauseOnHover: true,
                     draggable: true,
                     progress: undefined,
                 });
-                reset();
+                reset({
+                    quantity: ''
+                });
             });
     }
 
@@ -48,6 +50,7 @@ const Inventory = () => {
         const quantityDelivered = {
             quantity: quantity - 1
         };
+        reset()
         if (quantity > 0) {
             fetch(`https://inventory-station.herokuapp.com/products/${id}`, {
                 method: 'PUT',
@@ -61,13 +64,12 @@ const Inventory = () => {
                     toast.success('Updated product quantity!', {
                         position: "top-center",
                         autoClose: 2500,
-                        hideProgressBar: false,
+                        hideProgressBar: true,
                         closeOnClick: true,
                         pauseOnHover: true,
                         draggable: true,
                         progress: undefined,
                     });
-                    reset();
                 });
         }
     }
@@ -75,7 +77,6 @@ const Inventory = () => {
     return (
         <div className='inventory-conatainer'>
             <Title title='Inventory' />
-            <ToastContainer />
             <h2 className='py-5 m-0 text-center'>Update quantity for {name}</h2>
             <div className='inventory container'>
                 <img className='img-fluid' title={name} src={image} alt="" />
@@ -91,7 +92,7 @@ const Inventory = () => {
                     </div>
                     <h4>Price: <b>€{price}</b>/laptop</h4>
                     <p>Supplier: <b>{supplier}</b></p>
-                    <input {...register('quantity')} type="number" name="quantity" id="" placeholder='Quantity' />
+                    <input {...register('quantity', { required: true })} type="number" name="quantity" min="1" id="" placeholder='Quantity' />
                     <button onClick={handleSubmit(onSubmit)} className='btn button-restock btn-dark rounded-pill py-2'>
                         Restock Item
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

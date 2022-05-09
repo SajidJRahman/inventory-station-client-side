@@ -23,7 +23,7 @@ const ChooseUs = () => {
                         </svg>
                     </div>
                     <div className='choose-us-detail'>
-                        <p>We offer you to create your account, where you can store all your favorite products & delete any item you want. We currently offer Google, GitHub & Email-Password method, offering your security.</p>
+                        <p>We offer you to create your account, where you can store all your favorite products & delete any item you want. We currently offer Google, GitHub & Email-Password method, offering your security at top.</p>
                     </div>
                 </div>
                 <div className='choose-us-section'>

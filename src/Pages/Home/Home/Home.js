@@ -4,6 +4,7 @@ import ChooseUs from '../ChooseUs/ChooseUs';
 import Products from '../Products/Products';
 import './Home.css';
 import { Helmet } from 'react-helmet-async'
+import ContactUs from '../ContactUs/ContactUs';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <Banner />
             <Products />
             <ChooseUs />
+            <ContactUs />
         </div>
     );
 };

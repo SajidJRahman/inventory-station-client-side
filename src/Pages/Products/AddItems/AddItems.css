@@ -54,6 +54,7 @@
 }
 
 .description-textarea {
+    width: 100%;
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     border-radius: 6px !important;
@@ -65,9 +66,6 @@
     margin-bottom: 4px;
     width: 98%;
     padding: 8px;
-}
-
-.add-items-button {
     background-color: rgb(52, 212, 159);
     color: white;
 }

@@ -13,10 +13,12 @@ import ManageInventory from './Pages/Products/ManageInventory/ManageInventory';
 import RequireAuth from './Pages/Authentications/RequireAuth/RequireAuth';
 import AddItems from './Pages/Products/AddItems/AddItems';
 import About from './Pages/About/About';
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
   return (
     <div>
+      <ToastContainer />
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />

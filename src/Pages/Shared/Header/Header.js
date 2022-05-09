@@ -76,7 +76,7 @@ const Header = () => {
                     {
                         user ?
                             <div className='navbar-logout'>
-                                <button onClick={handleLogOut} className='btn btn-outline-light px-4 fw-bold'>Log Out</button>
+                                <button onClick={handleLogOut} className='btn btn-light px-4 fw-bold'>Log Out</button>
                             </div>
                             :
                             <div className='navbar-button-group'>

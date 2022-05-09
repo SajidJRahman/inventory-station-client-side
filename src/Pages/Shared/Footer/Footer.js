@@ -24,6 +24,7 @@ const Footer = () => {
                 <Link to='/manage-inventory'>Manage Inventory</Link>
                 <Link to='/blogs'>Blogs</Link>
                 <Link to='/my-items'>My Items</Link>
+                <Link to='/about-us'>About</Link>
             </div>
             <div className='footer-social text-center'>
                 <h5>Social</h5>

@@ -2,7 +2,7 @@ import React from 'react';
 import './ManageInventory.css';
 import useProducts from '../../../hooks/useProducts';
 import { Link, useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import Title from '../../Shared/Title/Title';
 
 const ManageInventory = () => {
@@ -32,7 +32,7 @@ const ManageInventory = () => {
                     toast.success('Item has been deleted successfully!', {
                         position: "top-center",
                         autoClose: 2500,
-                        hideProgressBar: false,
+                        hideProgressBar: true,
                         closeOnClick: true,
                         pauseOnHover: true,
                         draggable: true,
@@ -45,7 +45,6 @@ const ManageInventory = () => {
     return (
         <div className='manage-inventory-container text-center container'>
             <Title title='Manage Inventory' />
-            <ToastContainer />
             <h2 className='py-3'>Manage Inventory</h2>
             <div className='manage-inventory'>
                 {

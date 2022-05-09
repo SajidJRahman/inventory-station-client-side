@@ -1,0 +1,84 @@
+.contact-us-container {
+    background-color: rgba(79, 155, 255, 0.307);
+    padding: 40px 0px 70px 0px;
+}
+
+.contact-form {
+    width: 500px;
+    background-color: rgba(255, 255, 255);
+    padding: 30px;
+    box-shadow: 0 0 0, 0 0 30px rgba(118, 120, 253, 0.307);
+    border-radius: 13px;
+    margin-top: 30px;
+}
+
+.contact-details {
+    padding: 5px;
+}
+
+.contact-form input {
+    font-size: 15px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.contact-form input:focus {
+    border: 1px solid rgba(38, 139, 255, 0.637);
+    box-shadow: 0px 0px 0px rgba(44, 135, 255, 0.673) inset, 0px 0px 1px 3px rgba(38, 139, 255, 0.427);
+    outline: 0;
+    transition: color .15s ease-in-out, border .15s ease-in-out, box-shadow .15 ease-in-out;
+}
+
+.contact-form textarea {
+    width: 100%;
+    padding: 10px 0px 0px 15px;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+}
+
+.contact-form textarea:focus {
+    border: 1px solid rgba(38, 139, 255, 0.637);
+    box-shadow: 0px 0px 0px rgba(44, 135, 255, 0.673) inset, 0px 0px 1px 3px rgba(38, 139, 255, 0.427);
+    outline: 0;
+    transition: color .15s ease-in-out, border .15s ease-in-out, box-shadow .15 ease-in-out;
+}
+
+.submit-button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px;
+    background-color: rgb(52, 212, 159);
+    color: white;
+}
+
+.submit-button:hover {
+    background-color: rgb(0, 204, 136);
+    border: 1px solid rgb(0, 204, 136);
+    color: white;
+}
+
+/* 
+=======================
+MEDIA QUERY STARTS HERE
+=======================
+*/
+@media only screen and (min-width: 350px) and (max-width: 576px) {
+    .contact-us-container {
+        padding: 20px 0px 22px 0px;
+    }
+
+    .contact-form {
+        width: 90%;
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    .contact-form {
+        width: 70%;
+    }
+}

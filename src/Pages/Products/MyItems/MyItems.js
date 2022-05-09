@@ -2,7 +2,7 @@ import React from 'react';
 import './MyItems.css';
 import useMyItems from '../../../hooks/useMyItems';
 import { useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import Title from '../../Shared/Title/Title';
 
 const MyItems = () => {
@@ -32,7 +32,7 @@ const MyItems = () => {
                     toast.success('The item has been deleted successfully!', {
                         position: "top-center",
                         autoClose: 2500,
-                        hideProgressBar: false,
+                        hideProgressBar: true,
                         closeOnClick: true,
                         pauseOnHover: true,
                         draggable: true,
@@ -45,7 +45,6 @@ const MyItems = () => {
     return (
         <div className='my-items-container text-center container'>
             <Title title='My Items' />
-            <ToastContainer />
             <h2 className='py-3'>My Items</h2>
             <div className='my-items'>
                 {
