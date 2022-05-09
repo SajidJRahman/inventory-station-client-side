@@ -23,7 +23,12 @@ const Products = () => {
                             <div className='product-details'>
                                 <h2>{product.name}</h2>
                                 <p>{product.description}</p>
-                                <p>Available in stock: <b>{product.quantity}</b> laptops</p>
+                                <div>
+                                    Available in stock:
+                                    {
+                                        product.quantity === 0 ? <b> Stock Out</b> : <><b> {product.quantity}</b> laptops</>
+                                    }
+                                </div>
                                 <h4>Price: <b>€{product.price}</b>/laptop</h4>
                                 <p>Supplier: {product.supplier}</p>
                                 <button className='btn btn-dark rounded-pill ps-4 py-2' onClick={() => navigateToInventory(product._id)}>

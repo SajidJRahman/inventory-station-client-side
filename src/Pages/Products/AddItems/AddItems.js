@@ -2,12 +2,17 @@ import React from 'react';
 import './AddItems.css';
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from 'react-toastify';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import Title from '../../Shared/Title/Title';
 
 const AddItems = () => {
+    const [user] = useAuthState(auth);
+
     const { register, handleSubmit, reset, watch, errors } = useForm();
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/my-items', {
+        fetch('https://inventory-station.herokuapp.com/my-items', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -31,6 +36,7 @@ const AddItems = () => {
 
     return (
         <div className='add-items-container text-center'>
+            <Title title='Add Items' />
             <ToastContainer />
             <h2 className='py-4'>Add New Items</h2>
             <form className='add-items mx-auto'>
@@ -41,7 +47,7 @@ const AddItems = () => {
                     <textarea className='description-textarea' name="description" {...register('description', { required: true })} id="" cols="46" rows="2" placeholder='Description'>Apple M1-CPU 8-core, SSD processor: 256GB, RAM: 8GB, Display: 13.3'</textarea>
                     <input type="text" name="supplier" {...register('supplier', { required: true })} id="" placeholder='Supplier' />
                     <input type="number" name="price" {...register('price', { required: true })} id="" placeholder='Price' />
-                    <input type="email" name="email" {...register('email', { required: true })} id="" placeholder='Your Email' />
+                    <input type="email" name="email" value={user.email} disabled {...register('email', { required: true })} id="" placeholder='Your Email' />
                     <button onClick={handleSubmit(onSubmit)} className='add-items-button btn rounded-pill
             '>Add This Item</button>
                 </div>

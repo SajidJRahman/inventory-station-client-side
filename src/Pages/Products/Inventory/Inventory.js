@@ -4,6 +4,7 @@ import './Inventory.css';
 import { useForm } from "react-hook-form";
 import useUpdateProducts from '../../../hooks/useUpdateProducts';
 import { toast, ToastContainer } from 'react-toastify';
+import Title from '../../Shared/Title/Title';
 
 const Inventory = () => {
     const { id } = useParams();
@@ -21,7 +22,7 @@ const Inventory = () => {
     } = productsInfo
 
     const onSubmit = data => {
-        fetch(`http://localhost:5000/products/${id}`, {
+        fetch(`https://inventory-station.herokuapp.com/products/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -48,7 +49,7 @@ const Inventory = () => {
             quantity: quantity - 1
         };
         if (quantity > 0) {
-            fetch(`http://localhost:5000/products/${id}`, {
+            fetch(`https://inventory-station.herokuapp.com/products/${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -73,6 +74,7 @@ const Inventory = () => {
 
     return (
         <div className='inventory-conatainer'>
+            <Title title='Inventory' />
             <ToastContainer />
             <h2 className='py-5 m-0 text-center'>Update quantity for {name}</h2>
             <div className='inventory container'>

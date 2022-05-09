@@ -6,7 +6,7 @@ const useUpdateProducts = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${id}`)
+        fetch(`https://inventory-station.herokuapp.com/products/${id}`)
             .then(response => response.json())
             .then(data => setProductsInfo(data));
     }, [productsInfo]);

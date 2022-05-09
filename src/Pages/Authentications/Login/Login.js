@@ -7,6 +7,7 @@ import auth from '../../../firebase.init';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import Loader from '../../Shared/Loader/Loader';
 import { ToastContainer, toast } from 'react-toastify';
+import Title from '../../Shared/Title/Title';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -108,6 +109,7 @@ const Login = () => {
 
     return (
         <div id='login'>
+            <Title title='Login' />
             <ToastContainer />
             <div className='login'>
                 <div className='welcome-login'>

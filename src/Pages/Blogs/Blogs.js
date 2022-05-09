@@ -3,10 +3,12 @@ import './Blogs.css';
 import JavaScript from '../../images/blogs/JavaScript.svg';
 import NodeJS from '../../images/blogs/Node.js.svg';
 import MongoDB from '../../images/blogs/MongoDB.svg';
+import Title from '../Shared/Title/Title';
 
 const Blogs = () => {
     return (
         <div className='blogs-container text-center'>
+            <Title title="Blogs"></Title>
             <h2>Blogs</h2>
             <div className='blogs px-auto'>
                 <div className='blog'>

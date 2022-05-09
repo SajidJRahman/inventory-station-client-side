@@ -6,7 +6,7 @@ import './SignUp.css';
 import Loader from '../../Shared/Loader/Loader';
 import auth from '../../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGithub, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
-import { async } from '@firebase/util';
+import Title from '../../Shared/Title/Title';
 
 const SignUp = () => {
     const [name, setName] = useState('');
@@ -104,6 +104,7 @@ const SignUp = () => {
 
     return (
         <div id='sign-up'>
+            <Title title='Sign Up' />
             <div className='sign-up'>
                 <div className='welcome-sign-up'>
                     <h1 className='welcome-sign-up-header'>Welcome to<br /><span>InventoryStation</span></h1>

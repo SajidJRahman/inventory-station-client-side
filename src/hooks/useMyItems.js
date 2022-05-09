@@ -8,7 +8,7 @@ const useMyItems = () => {
 
     useEffect(() => {
         const currentUser = user.email;
-        fetch(`http://localhost:5000/my-items?email=${currentUser}`)
+        fetch(`https://inventory-station.herokuapp.com/my-items?email=${currentUser}`)
             .then(response => response.json())
             .then(data => setMyItems(data))
     }, [user.email]);

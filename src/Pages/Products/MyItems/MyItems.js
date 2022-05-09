@@ -3,6 +3,7 @@ import './MyItems.css';
 import useMyItems from '../../../hooks/useMyItems';
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
+import Title from '../../Shared/Title/Title';
 
 const MyItems = () => {
     const [myItems, setMyItems] = useMyItems();
@@ -16,7 +17,7 @@ const MyItems = () => {
         const confirmDelete = window.confirm('This cannot be undone, are you sure you want to delete?');
 
         if (confirmDelete === true) {
-            const url = `http://localhost:5000/products/${_id}`;
+            const url = `https://inventory-station.herokuapp.com/products/${_id}`;
             fetch(url, {
                 method: 'DELETE',
                 headers: {
@@ -43,6 +44,7 @@ const MyItems = () => {
 
     return (
         <div className='my-items-container text-center container'>
+            <Title title='My Items' />
             <ToastContainer />
             <h2 className='py-3'>My Items</h2>
             <div className='my-items'>
