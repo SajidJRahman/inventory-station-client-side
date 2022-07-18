@@ -14,11 +14,13 @@ import RequireAuth from './Pages/Authentications/RequireAuth/RequireAuth';
 import AddItems from './Pages/Products/AddItems/AddItems';
 import About from './Pages/About/About';
 import { ToastContainer } from 'react-toastify';
+import ScrollToTop from './Pages/ScrollToTop/ScrollToTop';
 
 const App = () => {
   return (
     <div>
       <ToastContainer />
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
